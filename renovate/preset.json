@@ -1,0 +1,129 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "description": [
+        "Preset used by Crafthippie"
+    ],
+    "extends": [
+        "config:base",
+        "docker:pinDigests",
+        ":semanticCommits",
+        ":semanticCommitType(deps)"
+    ],
+    "docker": {
+        "digest": {
+            "groupName": "Docker digests",
+            "automerge": true
+        }
+    },
+    "packageRules": [
+        {
+            "description": "Build tool version upgrades",
+            "groupName": "build tools",
+            "matchPackageNames": [
+                "actionhippie/calens",
+                "actionhippie/gpgsign",
+                "actionhippie/gpgsign",
+                "actionhippie/manifest",
+                "actionhippie/pushrm",
+                "actions/cache",
+                "actions/checkout",
+                "aws-actions/configure-aws-credentials",
+                "docker/build-push-action",
+                "docker/login-action",
+                "docker/metadata-action",
+                "docker/setup-buildx-action",
+                "docker/setup-qemu-action",
+                "EndBug/add-and-commit",
+                "ncipollo/release-action",
+                "peaceiris/actions-gh-pages",
+                "peaceiris/actions-hugo"
+            ],
+            "semanticCommitType": "ci",
+            "semanticCommitScope": "tools",
+            "automerge": true
+        },
+        {
+            "description": "Strip v prefix from versions",
+            "groupName": "version prefix",
+            "excludePackageNames": [
+                "actionhippie/calens",
+                "actionhippie/gpgsign",
+                "actionhippie/gpgsign",
+                "actionhippie/manifest",
+                "actionhippie/pushrm",
+                "actions/cache",
+                "actions/checkout",
+                "aws-actions/configure-aws-credentials",
+                "docker/build-push-action",
+                "docker/login-action",
+                "docker/metadata-action",
+                "docker/setup-buildx-action",
+                "docker/setup-qemu-action",
+                "EndBug/add-and-commit",
+                "ncipollo/release-action",
+                "peaceiris/actions-gh-pages",
+                "peaceiris/actions-hugo"
+            ],
+            "matchDatasources": [
+                "github-releases"
+            ],
+            "extractVersion": "^v(?<version>.*)$"
+        },
+        {
+            "description": "Semantic commits for major updates",
+            "groupName": "major updates",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "semanticCommitType": "major",
+            "semanticCommitScope": "deps",
+            "automerge": true
+        },
+        {
+            "description": "Semantic commits for minor updates",
+            "groupName": "minor updates",
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "semanticCommitType": "minor",
+            "semanticCommitScope": "deps",
+            "automerge": true
+        },
+        {
+            "description": "Semantic commits for patch updates",
+            "groupName": "patch updates",
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "semanticCommitType": "patch",
+            "semanticCommitScope": "deps",
+            "automerge": true
+        },
+        {
+            "description": "Automerge docker version updates",
+            "groupName": "docker updates",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "semanticCommitType": "minor",
+            "semanticCommitScope": "deps",
+            "automerge": true
+        },
+        {
+            "datasources": [
+                "docker"
+            ],
+            "updateTypes": [
+                "major",
+                "minor"
+            ],
+            "enabled": false
+        }
+    ],
+    "labels": [
+        "renovate"
+    ]
+}
