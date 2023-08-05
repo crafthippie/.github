@@ -36,7 +36,7 @@
         },
         {
             "description": "Semantic commits for major updates",
-            "groupName": "major updates",
+            "groupName": "major versions",
             "matchUpdateTypes": [
                 "major"
             ],
@@ -46,7 +46,7 @@
         },
         {
             "description": "Semantic commits for minor updates",
-            "groupName": "minor updates",
+            "groupName": "minor versions",
             "matchUpdateTypes": [
                 "minor"
             ],
@@ -56,7 +56,7 @@
         },
         {
             "description": "Semantic commits for patch updates",
-            "groupName": "patch updates",
+            "groupName": "patch versions",
             "matchUpdateTypes": [
                 "patch"
             ],
@@ -66,7 +66,7 @@
         },
         {
             "description": "Automerge docker version updates",
-            "groupName": "docker updates",
+            "groupName": "docker versions",
             "matchDatasources": [
                 "docker"
             ],
