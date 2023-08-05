@@ -11,7 +11,7 @@
     ],
     "docker": {
         "digest": {
-            "groupName": "Docker digests",
+            "groupName": "docker digests",
             "automerge": true
         }
     },
