@@ -19,24 +19,8 @@
         {
             "description": "Build tool version upgrades",
             "groupName": "build tools",
-            "matchPackageNames": [
-                "actionhippie/calens",
-                "actionhippie/gpgsign",
-                "actionhippie/gpgsign",
-                "actionhippie/manifest",
-                "actionhippie/pushrm",
-                "actions/cache",
-                "actions/checkout",
-                "aws-actions/configure-aws-credentials",
-                "docker/build-push-action",
-                "docker/login-action",
-                "docker/metadata-action",
-                "docker/setup-buildx-action",
-                "docker/setup-qemu-action",
-                "EndBug/add-and-commit",
-                "ncipollo/release-action",
-                "peaceiris/actions-gh-pages",
-                "peaceiris/actions-hugo"
+            "matchManagers": [
+                "github-actions"
             ],
             "semanticCommitType": "ci",
             "semanticCommitScope": "tools",
@@ -45,25 +29,6 @@
         {
             "description": "Strip v prefix from versions",
             "groupName": "version prefix",
-            "excludePackageNames": [
-                "actionhippie/calens",
-                "actionhippie/gpgsign",
-                "actionhippie/gpgsign",
-                "actionhippie/manifest",
-                "actionhippie/pushrm",
-                "actions/cache",
-                "actions/checkout",
-                "aws-actions/configure-aws-credentials",
-                "docker/build-push-action",
-                "docker/login-action",
-                "docker/metadata-action",
-                "docker/setup-buildx-action",
-                "docker/setup-qemu-action",
-                "EndBug/add-and-commit",
-                "ncipollo/release-action",
-                "peaceiris/actions-gh-pages",
-                "peaceiris/actions-hugo"
-            ],
             "matchDatasources": [
                 "github-releases"
             ],
