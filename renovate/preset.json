@@ -5,16 +5,20 @@
     ],
     "extends": [
         "config:base",
-        "docker:pinDigests",
         ":semanticCommits",
         ":semanticCommitType(deps)"
     ],
-    "docker": {
-        "digest": {
-            "groupName": "docker digests",
-            "automerge": true
+    "regexManagers": [
+        {
+            "fileMatch": [
+                "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
+                "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\nENV .*?_VERSION=(?<currentValue>.*)"
+            ]
         }
-    },
+    ],
     "packageRules": [
         {
             "description": "Strip v prefix from versions",
@@ -76,6 +80,22 @@
                 "minor"
             ],
             "enabled": false
+        },
+        {
+            "description": "Automerge docker digest updates",
+            "groupName": "docker digests",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchUpdateTypes": [
+                "pin",
+                "pinDigest",
+                "digest"
+            ],
+            "semanticCommitType": "chore",
+            "semanticCommitScope": "deps",
+            "pinDigests": true,
+            "automerge": true
         },
         {
             "description": "Build tool version upgrades",
