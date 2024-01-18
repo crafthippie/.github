@@ -1,5 +1,8 @@
 # Status
 
+## boergers
+[![client build](https://github.com/crafthippie/boergers/actions/workflows/client.yml/badge.svg)](https://github.com/crafthippie/boergers/actions/workflows/client.yml) [![docker build](https://github.com/crafthippie/boergers/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/boergers/actions/workflows/docker.yml) [![pages build](https://github.com/crafthippie/boergers/actions/workflows/pages.yml/badge.svg)](https://github.com/crafthippie/boergers/actions/workflows/pages.yml) [![release build](https://github.com/crafthippie/boergers/actions/workflows/release.yml/badge.svg)](https://github.com/crafthippie/boergers/actions/workflows/release.yml)
+
 ## bromance
 [![changes build](https://github.com/crafthippie/bromance/actions/workflows/changes.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/changes.yml) [![client build](https://github.com/crafthippie/bromance/actions/workflows/client.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/client.yml) [![docker build](https://github.com/crafthippie/bromance/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/docker.yml) [![pages build](https://github.com/crafthippie/bromance/actions/workflows/pages.yml/badge.svg)](https://github.com/crafthippie/bromance/actions/workflows/pages.yml)
 
