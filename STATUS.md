@@ -11,3 +11,6 @@
 
 ## owntech
 [![changes build](https://github.com/crafthippie/owntech/actions/workflows/changes.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/changes.yml) [![client build](https://github.com/crafthippie/owntech/actions/workflows/client.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/client.yml) [![docker build](https://github.com/crafthippie/owntech/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/docker.yml) [![pages build](https://github.com/crafthippie/owntech/actions/workflows/pages.yml/badge.svg)](https://github.com/crafthippie/owntech/actions/workflows/pages.yml)
+
+## skyblock
+[![client build](https://github.com/crafthippie/skyblock/actions/workflows/client.yml/badge.svg)](https://github.com/crafthippie/skyblock/actions/workflows/client.yml) [![docker build](https://github.com/crafthippie/skyblock/actions/workflows/docker.yml/badge.svg)](https://github.com/crafthippie/skyblock/actions/workflows/docker.yml) [![pages build](https://github.com/crafthippie/skyblock/actions/workflows/pages.yml/badge.svg)](https://github.com/crafthippie/skyblock/actions/workflows/pages.yml) [![releases build](https://github.com/crafthippie/skyblock/actions/workflows/releases.yml/badge.svg)](https://github.com/crafthippie/skyblock/actions/workflows/releases.yml)
