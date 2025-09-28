@@ -4,10 +4,15 @@
         "Preset used by Crafthippie"
     ],
     "extends": [
-        "config:base",
+        "config:best-practices",
+        ":disableRateLimiting",
+        ":prImmediately",
         ":semanticCommits",
         ":semanticCommitType(deps)"
     ],
+    "dockerfile": {
+        "pinDigests": true
+    },
     "regexManagers": [
         {
             "fileMatch": [
@@ -30,56 +35,30 @@
         },
         {
             "description": "Semantic commits for major updates",
-            "groupName": "major versions",
             "matchUpdateTypes": [
                 "major"
             ],
-            "semanticCommitType": "major",
-            "semanticCommitScope": "deps",
+            "semanticCommitType": "deps",
+            "semanticCommitScope": "major",
             "automerge": true
         },
         {
             "description": "Semantic commits for minor updates",
-            "groupName": "minor versions",
             "matchUpdateTypes": [
                 "minor"
             ],
-            "semanticCommitType": "minor",
-            "semanticCommitScope": "deps",
+            "semanticCommitType": "deps",
+            "semanticCommitScope": "minor",
             "automerge": true
         },
         {
             "description": "Semantic commits for patch updates",
-            "groupName": "patch versions",
             "matchUpdateTypes": [
                 "patch"
             ],
-            "semanticCommitType": "patch",
-            "semanticCommitScope": "deps",
+            "semanticCommitType": "deps",
+            "semanticCommitScope": "patch",
             "automerge": true
-        },
-        {
-            "description": "Automerge docker version updates",
-            "groupName": "docker versions",
-            "matchDatasources": [
-                "docker"
-            ],
-            "matchUpdateTypes": [
-                "patch"
-            ],
-            "semanticCommitType": "minor",
-            "semanticCommitScope": "deps",
-            "automerge": true
-        },
-        {
-            "datasources": [
-                "docker"
-            ],
-            "updateTypes": [
-                "major",
-                "minor"
-            ],
-            "enabled": false
         },
         {
             "description": "Automerge docker digest updates",
@@ -92,7 +71,7 @@
                 "pinDigest",
                 "digest"
             ],
-            "semanticCommitType": "chore",
+            "semanticCommitType": "patch",
             "semanticCommitScope": "deps",
             "pinDigests": true,
             "automerge": true
@@ -106,6 +85,17 @@
             "semanticCommitType": "ci",
             "semanticCommitScope": "tools",
             "automerge": true
+        },
+        {
+            "datasources": [
+                "docker"
+            ],
+            "updateTypes": [
+                "major",
+                "minor",
+                "patch"
+            ],
+            "enabled": false
         }
     ],
     "labels": [
