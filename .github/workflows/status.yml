@@ -39,6 +39,9 @@ jobs:
       - name: Write date
         run: date >| .github/STATUS
 
+      - name: Install deps
+        run: bundle install
+
       - name: Execute script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
