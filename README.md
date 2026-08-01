@@ -18,6 +18,49 @@ mise trust
 mise install
 ```
 
+## Usage
+
+We are using [Terraform][terraform] to provision all related parts. Every change
+have to be submitted via pull requests, after merging the pull request the
+changes are getting applied automatically by our CI system. It is possible to
+execute everything from a workstation, but it's encouraged to keep it in the
+hands of our CI system.
+
+### Variables
+
+To get access to the secrets you got to install the 1Password CLI, you can
+choose on your own if you export the `OP_SERVICE_ACCOUNT_TOKEN` environment
+variable or simply execute `op signin`.
+
+```console
+cat << EOF > mise.local.toml
+[env]
+GITHUB_TOKEN = "$(op read op://Webhippie/Github/token)"
+
+AWS_ACCESS_KEY_ID = "$(op read op://Webhippie/Terraform/username)"
+AWS_SECRET_ACCESS_KEY = "$(op read op://Webhippie/Terraform/password)"
+EOF
+```
+
+This writes the environment variables into `mise.local.toml` which is ignored
+by Git and only active for your workstation. Run `mise trust` first if you
+haven't already done so for this repository.
+
+### Deployment
+
+```console
+terraform -chdir=terraform/ init
+terraform -chdir=terraform/ plan
+terraform -chdir=terraform/ apply
+```
+
+### Buildstatus
+
+```console
+bundle install
+bundle exec scripts/generate-status
+```
+
 ## Security
 
 If you find a security issue please contact
@@ -71,6 +114,7 @@ Apache-2.0
 Copyright (c) 2024 Thomas Boerger <thomas@webhippie.de>
 ```
 
+[terraform]: https://www.terraform.io/
 [mise]: https://mise.jdx.dev/
 [mise-install]: https://mise.jdx.dev/getting-started.html
 [commits]: https://www.conventionalcommits.org/en/v1.0.0/
